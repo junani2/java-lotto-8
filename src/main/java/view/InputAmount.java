@@ -4,7 +4,7 @@ import exception.ErrorMessage;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
-public class Input {
+public class InputAmount {
 
     //로또 구입 금액
     public static int amount() {
