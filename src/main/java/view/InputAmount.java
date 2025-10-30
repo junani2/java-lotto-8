@@ -7,7 +7,7 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 public class InputAmount {
 
     //로또 구입 금액
-    public static int amount() {
+    public static int purchase() {
 
         try {
             System.out.println("구입금액을 입력해 주세요.");
@@ -23,7 +23,7 @@ public class InputAmount {
 
         } catch (IllegalArgumentException e) {
             System.out.println("[Error]" + e.getMessage());
-            return amount();
+            return purchase();
         }
     }
 }
