@@ -35,4 +35,5 @@ class LottoTest {
         assertThatThrownBy(() -> lotto.addBonusNumber(47))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
 }
