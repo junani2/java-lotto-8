@@ -31,16 +31,7 @@ public class Lotto {
         }
     }
 
-    public void addBonusNumber(int bonus){
 
-        if (bonus < 1 || bonus > 45) {
-            throw new IllegalArgumentException(ErrorMessage.NUMBER_OUT_OF_RANGE.getMessage());
-        }
-        if (numbers.contains(bonus)) {
-            throw new IllegalArgumentException(ErrorMessage.DUPLICATE_NUMBER.getMessage());
-        }
-        numbers.add(bonus);
-    }
 
     // TODO: 추가 기능 구현
 }
