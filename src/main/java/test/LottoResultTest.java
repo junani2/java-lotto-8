@@ -37,6 +37,5 @@ public class LottoResultTest {
         assertEquals(1,result.get("4"));
         assertEquals(1,result.get("3"));
 
-
     }
 }
