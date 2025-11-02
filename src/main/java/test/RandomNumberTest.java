@@ -1,4 +1,4 @@
-package utiltest;
+package test;
 
 import domain.LottoGenerate;
 import lotto.Lotto;
