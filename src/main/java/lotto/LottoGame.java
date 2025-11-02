@@ -1,6 +1,6 @@
 package lotto;
 
-import domain.LottoGenerate;
+import domain.LottoGenerator;
 import domain.LottoResult;
 import domain.WinningLotto;
 import prize.Prize;
@@ -19,7 +19,7 @@ public class LottoGame {
         int amount = InputAmount.purchase();
 
         //구매한 로또 출력
-        LottoGenerate lottos = new LottoGenerate();
+        LottoGenerator lottos = new LottoGenerator();
         BuyingLottos.printLottos(lottos.generate(amount));
 
         //번호 입력 + 보너스 번호로 객체 만들기

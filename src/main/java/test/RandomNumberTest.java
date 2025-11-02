@@ -1,6 +1,6 @@
 package test;
 
-import domain.LottoGenerate;
+import domain.LottoGenerator;
 import domain.Lotto;
 import org.junit.jupiter.api.Test;
 import view.BuyingLottos;
@@ -11,7 +11,7 @@ public class RandomNumberTest {
 
     @Test
     void 로또_발급하기_출력_테스트() {
-        LottoGenerate lottoGenerate = new LottoGenerate();
+        LottoGenerator lottoGenerate = new LottoGenerator();
         List<Lotto> lottos = lottoGenerate.generate(8);
 
         BuyingLottos.printLottos(lottos);
