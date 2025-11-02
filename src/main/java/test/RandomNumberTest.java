@@ -1,7 +1,7 @@
 package test;
 
 import domain.LottoGenerate;
-import lotto.Lotto;
+import domain.Lotto;
 import org.junit.jupiter.api.Test;
 import view.BuyingLottos;
 

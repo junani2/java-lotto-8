@@ -4,7 +4,7 @@ import domain.LottoResult;
 import prize.Prize;
 import util.ResultRate;
 import domain.WinningLotto;
-import lotto.Lotto;
+import domain.Lotto;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

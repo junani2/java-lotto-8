@@ -1,6 +1,5 @@
 package domain;
 
-import lotto.Lotto;
 import util.WinningNumberParser;
 
 import java.util.List;

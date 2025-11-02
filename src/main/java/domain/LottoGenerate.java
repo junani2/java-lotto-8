@@ -1,6 +1,5 @@
 package domain;
 
-import lotto.Lotto;
 import util.LottoRandomNumber;
 
 import java.util.ArrayList;

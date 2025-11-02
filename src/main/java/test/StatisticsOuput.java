@@ -2,10 +2,9 @@ package test;
 
 import domain.LottoResult;
 import domain.WinningLotto;
-import lotto.Lotto;
+import domain.Lotto;
 import org.junit.jupiter.api.Test;
 import prize.Prize;
-import util.ResultRate;
 import view.WinningStatistics;
 
 import java.util.List;
