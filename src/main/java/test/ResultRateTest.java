@@ -1,6 +1,7 @@
 package test;
 
 import domain.LottoResult;
+import prize.Prize;
 import util.ResultRate;
 import domain.WinningLotto;
 import lotto.Lotto;
@@ -24,9 +25,9 @@ public class ResultRateTest {
 
         List<Lotto> lottos = List.of(lotto1,lotto3,lotto4,lotto5);
 
-        Map<String,Integer> result = LottoResult.calculate(lottos,winningLotto);
+        Map<Prize,Integer> result = LottoResult.calculate(lottos,winningLotto);
 
-        double rate =ResultRate.getMoney(result,13000);
+        double rate =ResultRate.earningRate(result,13000);
         System.out.println("수익률 : " + rate);
 
     }

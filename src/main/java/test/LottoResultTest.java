@@ -4,6 +4,7 @@ import domain.LottoResult;
 import domain.WinningLotto;
 import lotto.Lotto;
 import org.junit.jupiter.api.Test;
+import prize.Prize;
 
 import java.util.List;
 import java.util.Map;
@@ -29,13 +30,14 @@ public class LottoResultTest {
 
         List<Lotto> lottos = List.of(lotto1,lotto2,lotto3,lotto4,lotto5);
 
-        Map<String,Integer> result = LottoResult.calculate(lottos,winningLotto);
+        Map<Prize,Integer> result = LottoResult.calculate(lottos,winningLotto);
 
-        assertEquals(1,result.get("6"));
-        assertEquals(1,result.get("5b"));
-        assertEquals(1,result.get("5"));
-        assertEquals(1,result.get("4"));
-        assertEquals(1,result.get("3"));
+        assertEquals(1, result.get(Prize.SIX));
+        assertEquals(1, result.get(Prize.FIVE_BONUS));
+        assertEquals(1, result.get(Prize.FIVE));
+        assertEquals(1, result.get(Prize.FOUR));
+        assertEquals(1, result.get(Prize.THREE));
+
 
     }
 }

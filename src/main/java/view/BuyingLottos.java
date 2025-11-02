@@ -1,11 +1,10 @@
 package view;
 
-import domain.LottoGenerate;
 import lotto.Lotto;
 
 import java.util.List;
 
-public class LottoOutputView {
+public class BuyingLottos {
 
     public static void printLottos(List<Lotto> lottos){
         System.out.println(lottos.size() + "개를 구매했습니다.");

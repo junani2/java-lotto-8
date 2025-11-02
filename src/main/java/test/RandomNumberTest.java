@@ -3,7 +3,7 @@ package test;
 import domain.LottoGenerate;
 import lotto.Lotto;
 import org.junit.jupiter.api.Test;
-import view.LottoOutputView;
+import view.BuyingLottos;
 
 import java.util.List;
 
@@ -14,6 +14,6 @@ public class RandomNumberTest {
         LottoGenerate lottoGenerate = new LottoGenerate();
         List<Lotto> lottos = lottoGenerate.generate(8);
 
-        LottoOutputView.printLottos(lottos);
+        BuyingLottos.printLottos(lottos);
     }
 }

@@ -1,6 +1,7 @@
 package domain;
 
 import lotto.Lotto;
+import prize.Prize;
 
 import java.util.HashMap;
 import java.util.List;
@@ -8,13 +9,13 @@ import java.util.Map;
 
 public class LottoResult {
 
-    public static Map<String, Integer> calculate(List<Lotto> lottos, WinningLotto winningLotto) {
-        Map<String, Integer> result = new HashMap<>();
-        result.put("3",0);
-        result.put("4",0);
-        result.put("5",0);
-        result.put("5b",0);
-        result.put("6",0);
+    public static Map<Prize, Integer> calculate(List<Lotto> lottos, WinningLotto winningLotto) {
+        Map<Prize, Integer> result = new HashMap<>();
+
+        //prize 값 초기화
+        for (Prize prize : Prize.values()) {
+            result.put(prize, 0);
+        }
 
         for (Lotto lotto : lottos) {
             int matchCount = (int) lotto.getNumbers().stream()
@@ -22,16 +23,21 @@ public class LottoResult {
                     .count();
             boolean matchBonus = lotto.getNumbers().contains(winningLotto.getBonusNumber());
 
-            if(matchCount == 6)
-                result.put("6", result.get("6")+1);
-            if(matchCount ==5 && matchBonus)
-                result.put("5b", result.get("5b")+1);
-            if(matchCount ==5 && !matchBonus)
-                result.put("5", result.get("5")+1);
-            if(matchCount ==4)
-                result.put("4", result.get("4")+1);
-            if(matchCount ==3)
-                result.put("3", result.get("3")+1);
+            Prize prize = null;
+            if (matchCount == 6)
+                prize = Prize.SIX;
+            if (matchCount == 5 && matchBonus)
+                prize = Prize.FIVE_BONUS;
+            if (matchCount == 5)
+                prize = Prize.FIVE;
+            if (matchCount == 4)
+                prize = Prize.FOUR;
+            if (matchCount == 3)
+                prize = Prize.THREE;
+
+            if (prize != null) {
+                result.put(prize, result.get(prize) + 1);
+            }
         }
         return result;
     }
