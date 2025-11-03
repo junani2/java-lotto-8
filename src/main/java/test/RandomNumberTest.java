@@ -12,7 +12,7 @@ public class RandomNumberTest {
     @Test
     void 로또_발급하기_출력_테스트() {
         LottoGenerator lottoGenerate = new LottoGenerator();
-        List<Lotto> lottos = lottoGenerate.generate(8);
+        List<Lotto> lottos = lottoGenerate.generate(8000);
 
         BuyingLottos.printLottos(lottos);
     }

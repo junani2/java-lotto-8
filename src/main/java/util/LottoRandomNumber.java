@@ -8,9 +8,9 @@ import java.util.List;
 
 public class LottoRandomNumber {
 
-    public static Lotto pick(){
+    public static Lotto pick() {
 
-        List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1,45,6);
+        List<Integer> numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6);
         Collections.sort(numbers);
         return new Lotto(numbers);
     }

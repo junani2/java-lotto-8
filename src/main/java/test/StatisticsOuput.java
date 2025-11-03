@@ -13,7 +13,7 @@ import java.util.Map;
 public class StatisticsOuput {
     @Test
     void 수익률_계산() {
-        WinningLotto winningLotto = new WinningLotto("1,2,3,4,5,6", "10");
+        WinningLotto winningLotto = new WinningLotto("1,2,3,4,5,6", 10);
 
         //3개 일치
         Lotto lotto1 = new Lotto(List.of(1, 2, 3, 11, 13, 14));
@@ -26,6 +26,6 @@ public class StatisticsOuput {
 
         Map<Prize, Integer> result = LottoResult.calculate(lottos, winningLotto);
 
-        WinningStatistics .printStatistics(result,13000);
+        WinningStatistics.printStatistics(result, 13000);
     }
 }

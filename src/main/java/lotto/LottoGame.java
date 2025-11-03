@@ -3,10 +3,13 @@ package lotto;
 import prize.Prize;
 import view.BuyingLottos;
 import view.InputAmount;
-import view.InputWinningNumber;
+import view.InputWinningLotto;
 import view.WinningStatistics;
 
 import java.util.Map;
+
+import static view.InputWinningBonusNumber.readBonusNumber;
+import static view.InputWinningNumber.readNumber;
 
 public class LottoGame {
 
@@ -19,11 +22,9 @@ public class LottoGame {
         LottoGenerator lottos = new LottoGenerator();
         BuyingLottos.printLottos(lottos.generate(amount));
 
-        //번호 입력 + 보너스 번호로 객체 만들기
-        InputWinningNumber inputWinningNumber = new InputWinningNumber();
-        String inputNumber = inputWinningNumber.readNumber();
-        String inputBonusNumber = inputWinningNumber.readBonusNumber();
-        WinningLotto winningLotto = new WinningLotto(inputNumber, inputBonusNumber);
+        //번호 입력 + 보너스 번호로 WinningLotto 객체 만들기
+        InputWinningLotto inputWinningLotto = new InputWinningLotto();
+        WinningLotto winningLotto = inputWinningLotto.inputWinningLotto();
 
         //비교하기
         Map<Prize, Integer> result = LottoResult.calculate(lottos.generate(amount), winningLotto);

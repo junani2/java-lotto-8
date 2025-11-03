@@ -2,19 +2,26 @@ package lotto;
 
 import util.WinningNumberParser;
 
+import java.awt.*;
+
 public class WinningLotto extends Lotto {
     private final int bonusNumber;
 
-    public WinningLotto(String winningInput, String bonusInput) {
+    public WinningLotto(String winningInput, int bonusInput) {
 
         super(WinningNumberParser.parse(winningInput));
-        int bonus = Integer.parseInt(bonusInput);
+        int bonus = bonusInput;
         super.addBonusNumber(bonus);
         this.bonusNumber = bonus;
     }
 
     public int getBonusNumber() {
         return bonusNumber;
+    }
+
+    public WinningLotto(String numbers) {
+        super(WinningNumberParser.parse(numbers));
+        this.bonusNumber = -1;
     }
 }
 
