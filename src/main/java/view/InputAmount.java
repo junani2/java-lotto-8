@@ -22,7 +22,7 @@ public class InputAmount {
             return amount;
 
         } catch (IllegalArgumentException e) {
-            System.out.println("[Error]" + e.getMessage());
+            System.out.println( e.getMessage());
             return purchase();
         }
     }
