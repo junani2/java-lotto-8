@@ -21,7 +21,9 @@ public class WinningStatistics {
                 System.out.printf("%d개 일치 (%s원) - %d개\n", prize.getMatchCount(), formatMoney(prize.getMoney()), count);
             }
         }
-        System.out.println("총 수익률은" + ResultRate.earningRate(result, amount) + "%입니다.");
+
+        double rate = ResultRate.earningRate(result, amount);
+        System.out.printf("총 수익률은 %,.1f%%입니다.%n",rate);
 
     }
 
