@@ -2,8 +2,6 @@ package lotto;
 
 import util.WinningNumberParser;
 
-import java.awt.*;
-
 public class WinningLotto extends Lotto {
     private final int bonusNumber;
 

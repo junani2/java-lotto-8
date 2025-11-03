@@ -47,6 +47,5 @@ public class Lotto {
             throw new IllegalArgumentException(ErrorMessage.DUPLICATE_NUMBER.getMessage());
         }
         this.bonusNumber = bonus;
-        numbers.add(bonus);
     }
 }

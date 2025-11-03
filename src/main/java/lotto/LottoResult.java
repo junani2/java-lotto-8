@@ -23,11 +23,15 @@ public class LottoResult {
             boolean matchBonus = lotto.getNumbers().contains(winningLotto.getBonusNumber());
 
             Prize prize = null;
-            if (matchCount == 6)  prize = Prize.SIX;
-            if (matchCount == 5 && matchBonus)  prize = Prize.FIVE_BONUS;
-            if (matchCount == 5) prize = Prize.FIVE;
-            if (matchCount == 4) prize = Prize.FOUR;
-            if (matchCount == 3) prize = Prize.THREE;
+            if (matchCount == 6) prize = Prize.SIX;
+
+            if (prize == null && matchCount == 5 && matchBonus) prize = Prize.FIVE_BONUS;
+
+            if (prize == null && matchCount == 5) prize = Prize.FIVE;
+
+            if (prize == null && matchCount == 4) prize = Prize.FOUR;
+
+            if (prize == null && matchCount == 3) prize = Prize.THREE;
 
             if (prize != null) {
                 result.put(prize, result.get(prize) + 1);

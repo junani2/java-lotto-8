@@ -6,6 +6,7 @@ import view.InputAmount;
 import view.InputWinningLotto;
 import view.WinningStatistics;
 
+import java.util.List;
 import java.util.Map;
 
 import static view.InputWinningBonusNumber.readBonusNumber;
@@ -19,15 +20,18 @@ public class LottoGame {
         int amount = InputAmount.purchase();
 
         //구매한 로또 출력
-        LottoGenerator lottos = new LottoGenerator();
-        BuyingLottos.printLottos(lottos.generate(amount));
+        LottoGenerator lottoGenerator = new LottoGenerator();
+        List<Lotto> lottos = lottoGenerator.generate(amount);
+
+        //로또 출력하기
+        BuyingLottos.printLottos(lottos);
 
         //번호 입력 + 보너스 번호로 WinningLotto 객체 만들기
         InputWinningLotto inputWinningLotto = new InputWinningLotto();
         WinningLotto winningLotto = inputWinningLotto.inputWinningLotto();
 
         //비교하기
-        Map<Prize, Integer> result = LottoResult.calculate(lottos.generate(amount), winningLotto);
+        Map<Prize, Integer> result = LottoResult.calculate(lottos, winningLotto);
 
         //출력하기
         WinningStatistics.printStatistics(result, amount);
