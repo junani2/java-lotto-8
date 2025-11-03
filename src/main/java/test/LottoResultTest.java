@@ -22,7 +22,7 @@ public class LottoResultTest {
         //5개 일치+보너스 일치
         Lotto lotto2 = new Lotto(List.of(1, 2, 3, 4, 5, 10));
         // 5개만 일치
-        Lotto lotto3 = new Lotto(List.of(1, 2, 3, 4, 5,11 ));
+        Lotto lotto3 = new Lotto(List.of(1, 2, 3, 4, 5, 11));
         // 4개만 일치
         Lotto lotto4 = new Lotto(List.of(3, 4, 5, 6, 8, 9));
         // 3개만 일치
