@@ -1,4 +1,4 @@
-package domain;
+package lotto;
 
 import util.LottoRandomNumber;
 

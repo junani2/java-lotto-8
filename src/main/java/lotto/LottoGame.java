@@ -1,8 +1,5 @@
 package lotto;
 
-import domain.LottoGenerator;
-import domain.LottoResult;
-import domain.WinningLotto;
 import prize.Prize;
 import view.BuyingLottos;
 import view.InputAmount;

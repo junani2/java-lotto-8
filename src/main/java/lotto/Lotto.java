@@ -1,4 +1,4 @@
-package domain;
+package lotto;
 
 import exception.ErrorMessage;
 
@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Lotto {
     private final List<Integer> numbers;
+    private int bonusNumber;
 
     public Lotto(List<Integer> numbers) {
         validate(numbers);
@@ -13,7 +14,7 @@ public class Lotto {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return numbers.toString();
     }
 
@@ -36,4 +37,16 @@ public class Lotto {
     }
 
     // TODO: 추가 기능 구현
+    public void addBonusNumber(int bonus) {
+
+        if (bonus < 1 || bonus > 45) {
+            throw new IllegalArgumentException(ErrorMessage.NUMBER_OUT_OF_RANGE.getMessage());
+        }
+
+        if (numbers.contains(bonus)) {
+            throw new IllegalArgumentException(ErrorMessage.DUPLICATE_NUMBER.getMessage());
+        }
+        this.bonusNumber = bonus;
+        numbers.add(bonus);
+    }
 }

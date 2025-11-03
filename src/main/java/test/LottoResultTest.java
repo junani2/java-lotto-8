@@ -1,8 +1,8 @@
 package test;
 
-import domain.LottoResult;
-import domain.WinningLotto;
-import domain.Lotto;
+import lotto.LottoResult;
+import lotto.WinningLotto;
+import lotto.Lotto;
 import org.junit.jupiter.api.Test;
 import prize.Prize;
 

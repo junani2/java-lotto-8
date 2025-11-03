@@ -1,6 +1,6 @@
 package view;
 
-import domain.Lotto;
+import lotto.Lotto;
 
 import java.util.List;
 
